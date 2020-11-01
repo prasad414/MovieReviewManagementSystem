@@ -1,0 +1,26 @@
+<div class="app-snackbar {{matSnackBarData.snackBarType}}" fxLayout="row">
+    <div class="snack-bar-type">
+        <mat-icon *ngIf="matSnackBarData.snackBarType == 'success'" class="type-icon">
+            check_circle_outline
+        </mat-icon>
+        <mat-icon *ngIf="matSnackBarData.snackBarType == 'error'" class="type-icon">
+            error_outline
+        </mat-icon>
+        <mat-icon *ngIf="matSnackBarData.snackBarType == 'warn'" class="type-icon">
+            warning
+        </mat-icon>
+        <mat-icon *ngIf="matSnackBarData.snackBarType == 'info'" class="type-icon">
+            info
+        </mat-icon>
+    </div>
+    <div>
+        <div fxLayout="row" class="snack-header">
+            <div class="snack-header-title"> {{matSnackBarData.title}} </div>
+            <span class="fill-remaining-space"></span>
+            <button mat-button class="close-button" (click)="closeSnackBar()">
+                <mat-icon style="color: #ffffff;">close</mat-icon>
+            </button>
+        </div>
+        <div fxLayout="row" class="snack-middle-description">{{matSnackBarData.message}}</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "menu": [
+    {
+      "route": "movies",
+      "name": "movies",
+      "type": "sub",
+      "icon": "movie",
+      "children": [
+        {
+          "route": "view-movies",
+          "name": "view-movies",
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

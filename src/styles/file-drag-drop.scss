@@ -1,0 +1,42 @@
+.upload-file-container {
+  padding: 10px 50px;
+  .dropable-area {
+    background-image: url("/assets/images/cloud-2044823_960_720.png");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 400px;
+    margin: 20px auto;
+    border: 2px dashed #1c8adb;
+    border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: #9ecbec !important;
+      opacity: 0.8;
+    }
+  }
+
+  .files-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background: #ffffff;
+    border: 1px dashed;
+    border-radius: 12px;
+    color: #1c8adb;
+    .delete-file-icon {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .no-file-selected {
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    background: #ffffff;
+    border: 1px dashed;
+    border-radius: 12px;
+    color: #1c8adb;
+  }
+}

@@ -1,0 +1,23 @@
+<mat-dialog-content>
+    <div fxFlex="100" fxFlex.lt-sm="100" class="matero-col">
+        <mat-card-title>
+            <span>{{movieDetail.title}}</span>
+            <mat-icon class="close-icon" (click)="onCloseDialog()">close</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle>{{movieDetail.tagline}}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="movie-other-detail">
+                <mat-chip-list>
+                    <mat-chip color="primary" *ngFor="let genre of movieDetail.genres">
+                        {{genre.name}}
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="movie-detail">
+                <img class="movie-poster" [src]="movieDetail.posterImg" alt="Poster">
+                <div class="movie-overview">{{movieDetail.overview}}</div>
+            </div>
+        </mat-card-content>
+
+    </div>
+</mat-dialog-content>

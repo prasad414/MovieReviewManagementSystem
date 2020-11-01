@@ -1,0 +1,73 @@
+.m-t-20 {
+    margin-top: 20px !important;
+}
+.p-b-100 {
+    padding-bottom: 100px !important;
+}
+
+.eye-icon,
+.info-icon {
+    color: #304ffe;
+}
+.edit-icon {
+    color: #3f51b5 !important;
+}
+.delete-icon {
+    color: #f44336 !important;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+
+
+.mat-tab-body-wrapper {
+    min-height: 65vh;
+}
+
+.movie-card-more-menu {
+    .mat-menu-item {
+        &:hover {
+            &.mark-as-fav {
+                color: #ff0000;
+                .mat-icon {
+                    color: #ff0000;
+                }
+            }
+            &.mark-as-watched {
+                color: #0eba0e;
+                .mat-icon {
+                    color: #0eba0e;
+                }
+            }
+            &.mark-as-reviewed {
+                color: #ffd740;
+                .mat-icon {
+                    color: #ffd740;
+                }
+            }
+        }
+    }
+}
+
+.watch_later-lable,
+.watch_later-icon {
+    color: #000;
+}
+.favorite_border-lable,
+.favorite_border-icon {
+    color: #ff0000;
+}
+.check_circle_outline-lable,
+.check_circle_outline-icon {
+    color: #0eba0e;
+}
+.star_border-lable,
+.star_border-icon {
+    color: #ffd740;
+}
+
+button.mat-menu-item {
+    height: 40px;
+}

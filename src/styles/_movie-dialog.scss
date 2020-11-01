@@ -1,0 +1,37 @@
+.movie-detail-dialog {
+    .mat-dialog-container {
+        width: 600px !important;
+        height: 550px !important;
+        overflow-y: auto;
+        .mat-dialog-content {
+            overflow: hidden;
+            .mat-card-title {
+                position: relative;
+                .close-icon {
+                    position: absolute;
+                    top: -5px;
+                    right: -10px;
+                    &:hover {
+                        color: #ff0000;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .mat-card-content {
+                .movie-detail {
+                    display: flex;
+                    display: flex;
+                    gap: 20px;
+                    padding: 10px 0px;
+                    img.movie-poster {
+                        height: 350px !important;
+                        width: auto !important;
+                    }
+                    .movie-overview {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}

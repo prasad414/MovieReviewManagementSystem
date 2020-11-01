@@ -1,0 +1,14 @@
+.login-card {
+    padding: 20px;
+}
+.company-logo {
+    height: 50px;
+    width: 70%;
+    margin: 10px 5px;
+}
+#forgot-password-link {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

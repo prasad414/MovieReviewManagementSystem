@@ -1,0 +1,51 @@
+<ng-container [ngSwitch]="dialogInput?.template">
+    <ng-container *ngSwitchDefault>
+        <ng-container *ngTemplateOutlet="DefaultConfirmationTemplate;"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'delete-confirmation'">
+        <ng-container *ngTemplateOutlet="DeleteConfirmationTemplate;"></ng-container>
+    </ng-container>
+</ng-container>
+
+<!-- Start : Default Confirmation Template  -->
+<ng-template #DefaultConfirmationTemplate>
+    <div mat-dialog-title class="confirmation-title">
+        {{dialogInput.title}}
+    </div>
+    <div mat-dialog-content>
+        <p class="confirmation-message">
+            {{dialogInput.message}}
+        </p>
+    </div>
+    <div mat-dialog-actions align="end" class="confirmation-actions">
+        <button class="btn-cancel" mat-button (click)="onConfirmationNo()">
+            {{dialogInput.noButtonText}}
+        </button>
+        <button class="btn-confirm" mat-button (click)="onConfirmationYes()">
+            {{dialogInput.yesButtonText}}
+        </button>
+    </div>
+</ng-template>
+<!-- End : Default Confirmation Template  -->
+
+
+<!-- Start : Delete Confirmation Template  -->
+<ng-template #DeleteConfirmationTemplate>
+    <div mat-dialog-title class="confirmation-title">
+        Delete {{dialogInput.title}}
+    </div>
+    <div mat-dialog-content>
+        <p class="confirmation-message">
+            {{dialogInput.message}}
+        </p>
+    </div>
+    <div mat-dialog-actions align="end" class="confirmation-actions">
+        <button class="btn-cancel" mat-button (click)="onConfirmationNo()">
+            {{dialogInput.noButtonText}}
+        </button>
+        <button class="btn-confirm" mat-button (click)="onConfirmationYes()">
+            {{dialogInput.yesButtonText}}
+        </button>
+    </div>
+</ng-template>
+<!-- End : Delete Confirmation Template  -->

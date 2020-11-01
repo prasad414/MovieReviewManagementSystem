@@ -1,0 +1,1 @@
+export { AppConfigModel } from './app.config.model';

@@ -1,0 +1,20 @@
+.confirmation-dialog {
+    .confirmation-title {
+        margin-bottom: 0px;
+        margin-top: -5px;
+    }
+    .confirmation-message {
+        padding: 15px 0px;
+        color: #000;
+    }
+
+    .confirmation-actions {
+        .btn-cancel {
+            color: #000 !important;
+        }
+        .btn-confirm {
+            background-color: #f44336 !important;
+            color: #fff !important;
+        }
+    }
+}
