@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
   }
 
   userList: Array<any> = [
-    { id: 1, name: 'Prasad S', username: 'prasad', password: 'prasad', avatar: '/assets/images/pexels-brett-sayles-3638045.jpg' },
-    { id: 2, name: 'Krishna K', username: 'krishna', password: 'krishna', avatar: '/assets/images/pexels-simon-robben-614810.jpg' },
+    { id: 1, name: 'Prasad S', username: 'prasad', password: 'prasad', avatar: './assets/images/pexels-brett-sayles-3638045.jpg' },
+    { id: 2, name: 'Krishna K', username: 'krishna', password: 'krishna', avatar: './assets/images/pexels-simon-robben-614810.jpg' },
   ];
   login() {
     if (this.loginForm.valid) {
