@@ -20,8 +20,6 @@
     visibility: hidden;
 }
 
-
-
 .mat-tab-body-wrapper {
     min-height: 65vh;
 }
@@ -42,9 +40,9 @@
                 }
             }
             &.mark-as-reviewed {
-                color: #ffd740;
+                color: #e0af1c;
                 .mat-icon {
-                    color: #ffd740;
+                    color: #e0af1c;
                 }
             }
         }
@@ -65,9 +63,16 @@
 }
 .star_border-lable,
 .star_border-icon {
-    color: #ffd740;
+    color: #e0af1c;
 }
 
 button.mat-menu-item {
     height: 40px;
+}
+
+.mat-tab-header {
+    position: sticky !important;
+    top: 63px;
+    z-index: 999999;
+    background: #efefef;
 }

@@ -8,8 +8,11 @@
                 <ng-container *ngFor="let filterType of filterTypeList; let tabIndex = index;">
                     <mat-tab class="mat-tab-container">
                         <ng-template mat-tab-label>
-                            <span [ngClass]="filterType.icon + '-lable'">{{filterType.tabName}}</span>
-                            <mat-icon class="m-l-8" [ngClass]="filterType.icon + '-icon'">{{filterType.icon}}</mat-icon>
+                            <span [ngClass]="filterType.icon + '-lable'">
+                                {{filterType.tabName}} ({{filterType.count}})
+                            </span>
+                            <mat-icon class="m-l-8" [ngClass]="filterType.icon + '-icon'">{{filterType.icon}}
+                            </mat-icon>
                         </ng-template>
                         <ng-container *ngIf="selectedTabIndex == tabIndex">
                             <mat-card class="no-shadow">

@@ -11,6 +11,8 @@ export class MoviesService {
 
     }
 
+
+    // This will come from config file
     v3ApiUrl: string = "https://api.themoviedb.org/3/";
     v4ApiUrl: string = "https://api.themoviedb.org/4/";
     apiKey: string = "383152e8c1903c8e59107fbfe3764b64";

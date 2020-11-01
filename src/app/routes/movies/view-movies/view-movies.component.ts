@@ -40,26 +40,86 @@ export class ViewMoviesComponent implements OnInit {
     this.selectedTabIndex = selectedTabIndex;
     const selectedFilter = this.filterTypeList[this.selectedTabIndex];
     this.selectedTabId = selectedFilter.tabId;
+
+    const favMovieIdList = this.getList('FavList');
+    const watchedMovieIdList = this.getList('WatchedList');
+    const reviewedMovieIdList = this.getList('ReviewedList');
+    const filteredMovieIdList = [...favMovieIdList, ...watchedMovieIdList, ...reviewedMovieIdList];
+    // this.filterTypeList.forEach(filterType => {
+    //   let movieList = [];
+    //   switch (filterType.id) {
+    //     case MenuOptionEnum.WatchLater:
+    //       movieList = this.moviesList.filter(x => filteredMovieIdList.indexOf(x.id) < 0);
+    //       filterType.count = movieList.length;
+    //       break;
+    //     case MenuOptionEnum.MarkAsFavourite:
+    //       movieList = this.moviesList.filter(x => favMovieIdList.indexOf(x.id) >= 0);
+    //       filterType.count = movieList.length;
+    //       break;
+    //     case MenuOptionEnum.MarkAsWatched:
+    //       movieList = this.moviesList.filter(x => watchedMovieIdList.indexOf(x.id) >= 0);
+    //       filterType.count = movieList.length;
+    //       break;
+    //     case MenuOptionEnum.MarkAsReviewed:
+    //       movieList = this.moviesList.filter(x => reviewedMovieIdList.indexOf(x.id) >= 0);
+    //       filterType.count = movieList.length;
+    //       break;
+    //     default:
+    //       break;
+    //   }
+    // });
+
     switch (this.selectedTabId) {
       case MenuOptionEnum.WatchLater:
-        const filteredMovieIdList = [...this.getList('FavList'), ...this.getList('WatchedList'), ...this.getList('ReviewedList')];
+        // const filteredMovieIdList = [...this.getList('FavList'), ...this.getList('WatchedList'), ...this.getList('ReviewedList')];
         this.filteredMoviewList = this.moviesList.filter(x => filteredMovieIdList.indexOf(x.id) < 0);
         break;
       case MenuOptionEnum.MarkAsFavourite:
-        const favMovieIdList = this.getList('FavList');
+        // const favMovieIdList = this.getList('FavList');
         this.filteredMoviewList = this.moviesList.filter(x => favMovieIdList.indexOf(x.id) >= 0);
         break;
       case MenuOptionEnum.MarkAsWatched:
-        const watchedMovieIdList = this.getList('WatchedList');
+        // const watchedMovieIdList = this.getList('WatchedList');
         this.filteredMoviewList = this.moviesList.filter(x => watchedMovieIdList.indexOf(x.id) >= 0);
         break;
       case MenuOptionEnum.MarkAsReviewed:
-        const reviewedMovieIdList = this.getList('ReviewedList');
+        // const reviewedMovieIdList = this.getList('ReviewedList');
         this.filteredMoviewList = this.moviesList.filter(x => reviewedMovieIdList.indexOf(x.id) >= 0);
         break;
       default:
         break;
     }
+    this.updateFilterCount();
+  }
+
+  updateFilterCount() {
+    const favMovieIdList = this.getList('FavList');
+    const watchedMovieIdList = this.getList('WatchedList');
+    const reviewedMovieIdList = this.getList('ReviewedList');
+    const filteredMovieIdList = [...favMovieIdList, ...watchedMovieIdList, ...reviewedMovieIdList];
+    this.filterTypeList.forEach(filterType => {
+      let movieList = [];
+      switch (filterType.tabId) {
+        case MenuOptionEnum.WatchLater:
+          movieList = this.moviesList.filter(x => filteredMovieIdList.indexOf(x.id) < 0);
+          filterType.count = movieList.length;
+          break;
+        case MenuOptionEnum.MarkAsFavourite:
+          movieList = this.moviesList.filter(x => favMovieIdList.indexOf(x.id) >= 0);
+          filterType.count = movieList.length;
+          break;
+        case MenuOptionEnum.MarkAsWatched:
+          movieList = this.moviesList.filter(x => watchedMovieIdList.indexOf(x.id) >= 0);
+          filterType.count = movieList.length;
+          break;
+        case MenuOptionEnum.MarkAsReviewed:
+          movieList = this.moviesList.filter(x => reviewedMovieIdList.indexOf(x.id) >= 0);
+          filterType.count = movieList.length;
+          break;
+        default:
+          break;
+      }
+    });
   }
 
   getFilterTypeList() {
@@ -98,6 +158,7 @@ export class ViewMoviesComponent implements OnInit {
           });
         });
         this.filteredMoviewList = this.moviesList;
+        this.updateFilterCount();
       }, error => {
         console.error('error', error);
       });
